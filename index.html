@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAIRO Network</title>
+<style>
+:root{--orange:#ff8a24;--gold:#ffc16b;--bg:#090909;--panel:#15120f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#f8f4ef;font-family:Arial,sans-serif}
+header{text-align:center;padding:42px 16px 28px;border-bottom:1px solid #382315;background:radial-gradient(ellipse at top,#39200e 0%,#100d0a 45%,#090909 80%)}
+.logo{font-size:clamp(48px,9vw,78px);font-weight:1000;letter-spacing:12px;color:var(--orange);text-shadow:0 0 24px #ff7a244d}
+.subtitle{color:#bcb1a6;letter-spacing:4px;font-size:12px;margin-top:8px}
+main{width:min(920px,92%);margin:auto}
+section{padding:38px 0}
+h2{text-align:center;font-size:25px;letter-spacing:2px}
+h2 span{color:var(--orange)}
+.intro{text-align:center;color:#c9bdb1;line-height:1.8}
+.servers{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:24px}
+.panel{background:linear-gradient(145deg,#1a1511,#100f0e);border:1px solid #503019;border-radius:14px;padding:24px}
+.panel h3{color:var(--gold);margin-top:0}
+.address{background:#090909;border:1px solid #382719;border-radius:8px;padding:13px;text-align:center;color:#ffb15f;overflow-wrap:anywhere;font-weight:bold}
+.small{font-size:13px;color:#a99d91;text-align:center}
+button,.join{cursor:pointer;display:inline-block;text-align:center;text-decoration:none;border:0;border-radius:8px;padding:12px 20px;background:linear-gradient(100deg,#ff7a18,#ffb347);color:#170c04;font-weight:800}
+.copy{display:block;margin:14px auto 0}
+.grade-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:18px;margin-top:25px}
+.grade{background:var(--panel);border:1px solid #52321d;border-radius:15px;padding:25px;position:relative;overflow:hidden}
+.grade:before{content:"";display:block;height:3px;background:linear-gradient(90deg,#ff7a18,#ffc16b);position:absolute;top:0;left:0;right:0}
+.grade h3{font-size:22px;margin:8px 0;color:var(--gold)}
+.price{font-size:24px;font-weight:bold;color:var(--orange);margin:12px 0}
+.grade ul{list-style:none;padding:0;line-height:2;color:#ddd0c3}
+.grade li:before{content:"✦ ";color:var(--orange)}
+.premium{border-style:dashed;border-color:#795331}
+.soon{display:inline-block;color:#ffbd75;border:1px solid #6c4528;border-radius:20px;padding:6px 10px;font-size:11px;letter-spacing:1px}
+.notice{text-align:center;line-height:1.8;color:#c5b8ab}
+.ticket{color:var(--gold);font-weight:bold}
+.discord{text-align:center;padding:42px 18px;background:radial-gradient(ellipse at center,#35200f,#100d0a 65%,#090909);border:1px solid #503019;border-radius:16px;margin:10px 0 42px}
+.discord h2{font-size:30px;margin-top:0}
+.discord p{color:#c7b8aa;line-height:1.8}
+.join{font-size:16px;padding:14px 35px;margin-top:10px}
+footer{text-align:center;border-top:1px solid #302116;padding:24px 12px;color:#8f8174;font-size:13px}
+@media(max-width:500px){.logo{letter-spacing:7px}.subtitle{letter-spacing:2px}section{padding:28px 0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">CAIRO</div>
+  <div class="subtitle">MINECRAFT NETWORK</div>
+</header>
+
+<main>
+  <section>
+    <h2>BINE AI VENIT IN <span>CAIRO</span></h2>
+    <p class="intro">Aventura ta incepe aici. Alatura-te comunitatii noastre si descopera lumea Cairo!</p>
+
+    <div class="servers">
+      <div class="panel">
+        <h3>☕ JAVA EDITION</h3>
+        <p class="small">Adresa serverului</p>
+        <div class="address">cairo.ititan.org</div>
+        <button class="copy" onclick="copyIP('cairo.ititan.org',this)">Copiaza IP</button>
+      </div>
+
+      <div class="panel">
+        <h3>🎮 BEDROCK EDITION</h3>
+        <p class="small">IP / Address</p>
+        <div class="address">ro1-243.ititan.eu</div>
+        <p class="small">Port: 19132</p>
+        <button class="copy" onclick="copyIP('ro1-243.ititan.eu',this)">Copiaza IP</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="grade">
+    <h2>💎 GRADE <span>CAIRO</span></h2>
+    <p class="intro">Alege gradul potrivit pentru aventura ta si bucura-te de beneficii speciale!</p>
+
+    <div class="grade-grid">
+      <div class="grade">
+        <h3>👑 VIP</h3>
+        <div class="price">20 LEI</div>
+        <ul>
+          <li>Kit VIP</li>
+          <li>2 lands</li>
+          <li>4 membri pe land</li>
+          <li>15 chunk-uri</li>
+          <li>2 home-uri</li>
+        </ul>
+      </div>
+
+      <div class="grade">
+        <h3>🔥 VIP+</h3>
+        <div class="price">30 LEI</div>
+        <ul>
+          <li>Kit VIP+</li>
+          <li>5 lands</li>
+          <li>5 membri pe land</li>
+          <li>Auction limit: 7</li>
+          <li>20 chunk-uri</li>
+          <li>3 home-uri</li>
+        </ul>
+      </div>
+
+      <div class="grade premium">
+        <h3>✨ PREMIUM</h3>
+        <p><span class="soon">COMING SOON</span></p>
+        <p>Pregatim ceva special pentru gradul Premium. Revenim in curand cu detalii despre pret si beneficii.</p>
+      </div>
+    </div>
+
+    <p class="notice">
+      Vrei unul dintre aceste grade?<br>
+      Fa un <span class="ticket">ticket pe Discord</span> si echipa CAIRO te va ajuta!
+    </p>
+  </section>
+
+  <section>
+    <div class="discord">
+      <h2>❤️ DISCORD</h2>
+      <p>Multumim tuturor celor care sustin CAIRO!<br>Alatura-te comunitatii si fii la curent cu noutatile.</p>
+      <a class="join" href="https://discord.gg/bKUNtah95" target="_blank" rel="noopener noreferrer">JOIN!</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 CAIRO Network · Toate drepturile rezervate
+</footer>
+
+<script>
+function copyIP(ip,button){
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(ip).then(()=>{
+      button.textContent='Copiat!';
+      setTimeout(()=>button.textContent='Copiaza IP',1800);
+    }).catch(()=>window.prompt('Copiaza IP-ul:',ip));
+  }else{
+    window.prompt('Copiaza IP-ul:',ip);
+  }
+}
+</script>
+</body>
+</html>
